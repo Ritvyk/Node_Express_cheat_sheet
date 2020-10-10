@@ -2,10 +2,13 @@ const path = require("path");
 const express = require("express");
 const membersAPI = require("./Members");
 
+//setting to enviroment variables
+require("dotenv").config();
+
+const PORT = process.env.PORT;
 //make fake data
 membersAPI.makeMembers(10);
 
-const PORT = 5000;
 const app = express(); //this will handle all the requests
 
 app.use(express.json());
